@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mysite',
+    'blog_site1',
     'social_django',
     
 ]
@@ -135,7 +135,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=[
     STATIC_DIR,
 ]
- 
+##Managing Media
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+MEDIA_URL='/media/'
 SITE_ID=1
 LOGIN_REDIRECT_URL='/'
 

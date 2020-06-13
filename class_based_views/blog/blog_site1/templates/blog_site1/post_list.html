@@ -1,0 +1,23 @@
+{%extends "blog_site1/base.html" %}
+{% block content %}
+<div class="cent[erstage">
+    <div class="jumbotron">
+    {% for post in post_list %}
+            
+
+            <img   src="/media/{{post.image}}"  >
+             
+            <h5 class="card-title"><a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a></h5>
+            <div class="date">
+            <p >Published on: {{post.published|date:"D M Y"}}</p>
+            </div>
+             <a href="{% url 'post_detail' pk=post.pk %}"  >Comments:{{post.approve_comments.count}}</a>
+           <hr class="my-4"/>
+      
+    {% endfor %}
+
+</div>
+</div>
+{%include 'blog_site1/pagination.html' with page=page_obj %}
+{% endblock %}
+ 
